@@ -12,7 +12,7 @@ clean:
 
 # Go to http://localhost:8085/auth/admin/master/console/#/master/clients then create a client with id kong then enable "Client authentication", "Authorization"
 # then go to Credentials tab to copy Client Secret and replace it in the below kong_secret var
-kong_secret=QCxOTVBXDYpUdAFlRi4HUBmQjMJoJhyK
+kong_secret=HKMaTerZlURH8B2WPPCCcpSJQCQwx9qV
 init: create_service create_route configure_oidc_plugin
 
 create_service:
@@ -39,7 +39,7 @@ configure_oidc_plugin:
           -d name=oidc \
           -d config.client_id=kong \
           -d config.client_secret=${kong_secret} \
-          -d config.discovery=http://localhost:8085/auth/realms/master/.well-known/openid-configuration \
+          -d config.discovery=http://192.168.1.70:8085/auth/realms/master/.well-known/openid-configuration \
           -d config.introspection_endpoint=http://keycloak:8080/auth/realms/master/protocol/openid-connect/token/introspect \
 
 print_access_token:
@@ -60,7 +60,7 @@ verify_active_token:
 # It will configure the plugin with the Kong client created in Keycloak
 # Remember to replace your keycloak server IP
 patch_oidc_plugin:
-	curl -s -X PATCH http://localhost:8001/plugins/a7b6a3ce-c2bb-4218-b705-b39fa837493d \
+	curl -s -X PATCH http://localhost:8001/plugins/919afd52-7a0f-47e3-9d9e-6a7bf46da470 \
           -d name=oidc \
           -d config.client_id=kong \
           -d config.client_secret=${kong_secret} \
