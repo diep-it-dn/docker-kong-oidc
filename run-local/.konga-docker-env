@@ -1,0 +1,7 @@
+TOKEN_SECRET=somerandomstring
+DB_ADAPTER=postgres
+DB_HOST=db
+DB_USER=kong
+DB_PASSWORD=kong
+DB_PG_SCHEMA=kong
+NODE_ENV=development
