@@ -1,7 +1,9 @@
 1. From the root dir, run `./build.sh` to build the docker image with tag: local/docker-kong-oidc:2.8.1
 2. cd to `run-local` folder
+    
     Run: `make kong-postgres`
-    Run: `make keycloak` if you don't have running keycloak server
+    
+    Run: `make keycloak` if you don't have a running keycloak server
 3. Run `make clean` to clean the kong server
    
 # Configure konga
